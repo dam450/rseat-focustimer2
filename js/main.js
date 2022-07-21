@@ -1,3 +1,4 @@
+import { toggleCard } from "./modules/cards.js";
 import controls from "./modules/controls.js";
 import display from "./modules/display.js";
 import elements from "./modules/elements.js";
@@ -14,42 +15,57 @@ const {
 // controls.addMinutes()
 
 
-countdown()
+
+
 
 playButton.addEventListener('click', () => {
   Sound().click()
+  countdown()
+
 })
 
 stopButton.addEventListener('click', () => {
-  sound.click()
+  Sound().click()
+
 })
 
 minusButton.addEventListener('click', () => {
-  sound.click()
+  Sound().click()
+
   controls.subtractMinutes()
 })
 
 plusButton.addEventListener('click', () => {
-  sound.click()
+  Sound().click()
+
   controls.addMinutes()
 })
 
 crowdButton.addEventListener('click', () => {
+  Sound().toggle()
+
   sound.crowd()
-  crowdButton.classList.toggle('active')
+  toggleCard(0)
 })
 
 rainButton.addEventListener('click', () => {
-  sound.crowd()
-  rainButton.classList.toggle('active')
+  Sound().toggle()
+
+  sound.rain()
+  toggleCard(3)
 })
 
 forestButton.addEventListener('click', () => {
-  sound.crowd()
-  forestButton.classList.toggle('active')
+  Sound().toggle()
+
+  sound.forest()
+  toggleCard(2)
 })
 
 fireButton.addEventListener('click', () => {
-  sound.crowd()
-  fireButton.classList.toggle('active')
+  Sound().toggle()
+
+  sound.fire()
+  toggleCard(1)
+
 })

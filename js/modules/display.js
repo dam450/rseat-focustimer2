@@ -1,6 +1,6 @@
-import elements from "./elements.js"
+import element from "./elements.js"
 
-const { minutesDisplay, secondsDisplay } = elements
+const { minutesDisplay, secondsDisplay } = element
 
 function isValidNum (numValue) {
   let itIsNumber = !isNaN(Number(numValue))
