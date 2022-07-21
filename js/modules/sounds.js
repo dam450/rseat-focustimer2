@@ -2,6 +2,8 @@ export default function () {
   
   const sndClick = new Audio('../../sounds/click.mp3')
   const sndToggle = new Audio('../../sounds/toggle.mp3')
+  const sndCuckoo = new Audio('../../sounds/cuckoo.mp3')
+
 
   const sndCrowd = new Audio('../../sounds/cafeteria.mp3')
   sndCrowd.loop = true
@@ -24,6 +26,10 @@ export default function () {
 
   function toggle() {
     sndToggle.play()
+
+  }
+  function alarm() {
+    sndCuckoo.play()
   }
 
   function bgAudio (sound) {
@@ -68,6 +74,7 @@ export default function () {
   return {
     click,
     toggle,
+    alarm,
     crowd,
     fire,
     forest,
