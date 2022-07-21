@@ -3,7 +3,7 @@ import controls from "./modules/controls.js";
 import display from "./modules/display.js";
 import elements from "./modules/elements.js";
 import Sound from "./modules/sounds.js";
-import { countdown } from "./modules/timer.js";
+import Timer from "./modules/timer.js";
 
 const sound = Sound()
 const { 
@@ -11,8 +11,8 @@ const {
   crowdButton, fireButton, forestButton, rainButton 
 } = elements
 
-// display.update(16, 7)
-// controls.addMinutes()
+display.update(0, 2)
+Timer.update(0, 2)
 
 
 
@@ -20,12 +20,14 @@ const {
 
 playButton.addEventListener('click', () => {
   Sound().click()
-  countdown()
+  Timer.countdown()
 
 })
 
 stopButton.addEventListener('click', () => {
   Sound().click()
+  Timer.stop()
+
 
 })
 
