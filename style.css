@@ -1,13 +1,31 @@
 :root {
   --base: 00;
-  --bg-color: #ffffff;
+  --bg-color: #fff;
   --bg-card: #e1e1e6;
   --text-color: #323239;
+  --fg-card-active: #fff;
   --accent-color: #02789c;
+  --fg-display: #000;
+
+  --mode: 'light';
 
   box-sizing: border-box;
   font-size: 62.5%;
 }
+
+/* @media (prefers-color-scheme: dark) {
+  :root {
+
+    --base: 00;
+    --bg-color: #000;
+    --bg-card: #29292E;
+    --text-color: #c4c4cc;
+    --accent-color: #0A3442;
+
+    --mode: 'dark';
+
+  }
+} */
 
 * {
   margin: 0;
@@ -16,6 +34,19 @@
 
 html {
   font-size: 1.6rem;
+}
+
+body.dark {
+  --base: 00;
+  --bg-color: #000;
+  --bg-card: #29292E;
+  --text-color: #c4c4cc;
+  --fg-card-active: #fff;
+  --accent-color: #0A3442;
+  --fg-display: #fff;
+
+
+
 }
 
 body {
@@ -32,7 +63,55 @@ body {
 
   color: var(--text-color);
   background: var(--bg-color);
+
+  transition: 600ms ease-in-out;
 }
+
+.hide {
+  display: none;
+  transition: 1s ease-out;
+
+
+}
+
+.theme-mode{
+  position: fixed;
+  top: 6.4rem;
+  right: 6.4rem;
+  /* border: 1px solid red; */
+  width: 4.4rem;
+  height: 4.4rem;
+
+  
+}
+.theme-mode button {
+  background: transparent;
+  /* background: rgba(119, 0, 0, 0.533); */
+  border: 0;
+  border-radius: 999px;
+  outline-offset: 4px;
+
+  width: 100%;
+  height: 100%;
+
+  animation-duration: 600ms;
+  animation-name: slidein;
+
+
+}
+
+@keyframes slidein {
+  from {
+    /* transform: translateX(50px) translateY(-50px); */
+    transform: translate3d(50px, -50px, 0);
+  }
+
+  to {
+    /* transform: translateX(0) translateY(0); */
+    transform: translate3d(0);
+  }
+}
+
 
 .timer {
   display: grid;
@@ -42,6 +121,7 @@ body {
 
 .display {
   font: 500 normal 12.6rem/14.8rem 'Roboto', sans-serif;
+  color: var(--fg-display);
 }
 .controls {
   display: flex;
@@ -112,13 +192,14 @@ button:hover > svg path {
 }
 
 button.active > svg path {
-  fill: var(--bg-color);
+  fill: var(--fg-card-active);
   transition: 300ms ease-out;
 
 }
 
 button.active:hover > svg path {
-  fill: var(--text-color);
+  /* fill: var(--text-color); */
   transition: 300ms ease-in;
+  filter: invert() brightness(1.2);
 
 }

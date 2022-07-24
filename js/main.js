@@ -14,7 +14,41 @@ const {
 display.update(0, 2)
 Timer.update(0, 2)
 
+const appBody = document.querySelector('body')
+const btnDark = document.querySelector('#dark-on')
+const btnLight = document.querySelector('#light-on')
 
+let preferDark = window.matchMedia("(prefers-color-scheme: dark)").matches
+console.log(`prefere modo escuro: ${preferDark}`)
+
+if (preferDark) {
+  darkMode(true)
+}
+
+/**
+ * change dark mode On (true) or Off (false)
+ * @param {boolean} bool 
+ */
+function darkMode(bool) {
+  if(bool) {
+    btnDark.classList.toggle('hide')
+    appBody.classList.add('dark')
+    btnLight.classList.toggle('hide')
+  }
+  else {
+    btnLight.classList.toggle('hide')
+    appBody.classList.remove('dark')
+    btnDark.classList.toggle('hide')
+  }
+}
+
+btnDark.addEventListener('click', () => {
+  darkMode(false)
+})
+
+btnLight.addEventListener('click', () => {
+  darkMode(true)
+})
 
 
 
