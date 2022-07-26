@@ -6,6 +6,7 @@
   --fg-card-active: #fff;
   --accent-color: #02789c;
   --fg-display: #000;
+  --slider-color: #323232;
 
   --mode: 'light';
 
@@ -44,6 +45,8 @@ body.dark {
   --fg-card-active: #fff;
   --accent-color: #0A3442;
   --fg-display: #fff;
+  --slider-color: #fff
+
 
 
 
@@ -69,7 +72,6 @@ body {
 
 .hide {
   display: none;
-  transition: 1s ease-out;
 
 
 }
@@ -151,6 +153,9 @@ body {
   outline-offset: -2px;
 }
 
+.card button svg {
+  margin-bottom: 3rem;
+}
 
 button > svg path {
   fill: var(--text-color);
@@ -180,26 +185,138 @@ button:hover > svg path {
   display: flex;
   justify-content: center;
 
-  overflow: hidden;
+  /* overflow: hidden; */
+  transition: 300ms ease-out;
+
+  position: relative;
+
+}
+.card button {
   transition: 300ms ease-out;
 
 }
 
-.card > button.active {
+.card button.active {
   background: var(--accent-color);
-  transition: 300ms ease-in;
-
+  transition: 300ms ease-in ;
 }
 
-button.active > svg path {
+
+button.active  svg path {
   fill: var(--fg-card-active);
   transition: 300ms ease-out;
 
 }
 
-button.active:hover > svg path {
-  /* fill: var(--text-color); */
+button.active:hover  svg path {
+  /* * fill: var(--text-color);  */
   transition: 300ms ease-in;
-  filter: invert() brightness(1.2);
+  /* * filter: invert() brightness(1.2); */
 
+} 
+
+.card .volume {
+  width: 9rem;
+
+  position: absolute;
+
+  bottom: 1.5rem;
+  left: 2.4rem;
+}
+
+.volume {
+  height: 2.2rem;
+  -webkit-appearance: none;
+  margin: 1rem 0;
+  width: 100%;
+  background: transparent;
+  cursor: grab;
+
+}
+/* .volume:focus {
+  outline: none;
+} */
+.volume::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 4px;
+  cursor: pointer;
+  /* animate: 0.2s; */
+  box-shadow: 0px 0px 0px #0000;
+  background: var(--slider-color);
+  border-radius: 50px;
+  border: 0px solid #0000;
+}
+.volume::-webkit-slider-thumb {
+  box-shadow: 0px 0px 0px var(--slider-color);
+  border: 0px solid #0000;
+  height: 16px;
+  width: 16px;
+  border-radius: 50px;
+  background: var(--slider-color);
+  cursor: pointer;
+  -webkit-appearance: none;
+  margin-top: -6px;
+}
+.volume:focus::-webkit-slider-runnable-track {
+  background: var(--slider-color);
+}
+.volume::-moz-range-track {
+  width: 100%;
+  height: 4px;
+  cursor: pointer;
+  /* animate: 0.2s; */
+  box-shadow: 0px 0px 0px #0000;
+  background: var(--slider-color);
+  border-radius: 50px;
+  border: 0px solid #0000;
+}
+.volume::-moz-range-thumb {
+  box-shadow: 0px 0px 0px var(--slider-color);
+  border: 0px solid #0000;
+  height: 16px;
+  width: 16px;
+  border-radius: 50px;
+  background: var(--slider-color);
+  cursor: pointer;
+}
+.volume::-ms-track {
+  width: 100%;
+  height: 4px;
+  cursor: pointer;
+  /* animate: 0.2s; */
+  background: transparent;
+  border-color: transparent;
+  color: transparent;
+}
+.volume::-ms-fill-lower {
+  background: var(--slider-color);
+  border: 0px solid #0000;
+  border-radius: 100px;
+  box-shadow: 0px 0px 0px #0000;
+}
+.volume::-ms-fill-upper {
+  background: var(--slider-color);
+  border: 0px solid #0000;
+  border-radius: 100px;
+  box-shadow: 0px 0px 0px #0000;
+}
+.volume::-ms-thumb {
+  margin-top: 1px;
+  box-shadow: 0px 0px 0px var(--slider-color);
+  border: 0px solid #0000;
+  height: 16px;
+  width: 16px;
+  border-radius: 50px;
+  background: var(--slider-color);
+  cursor: pointer;
+}
+.volume:focus::-ms-fill-lower {
+  background: var(--slider-color);
+}
+.volume:focus::-ms-fill-upper {
+  background: var(--slider-color);
+}
+
+.active .volume {
+  --slider-color: #fff;
 }

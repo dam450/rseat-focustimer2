@@ -79,6 +79,10 @@ export default function () {
     fire,
     forest,
     rain,
-    off
+    off,
+    sndCrowd,
+    sndFire,
+    sndForest,
+    sndRain
   }
 }

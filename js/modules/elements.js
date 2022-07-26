@@ -8,6 +8,10 @@ const forestButton = document.querySelector('#forest')
 const rainButton = document.querySelector('#rain')
 const crowdButton = document.querySelector('#crowd')
 const fireButton = document.querySelector('#fire')
+const forestSlider = document.querySelector('#vol-forest')
+const rainSlider = document.querySelector('#vol-rain')
+const crowdSlider = document.querySelector('#vol-crowd')
+const fireSlider = document.querySelector('#vol-fire')
 
 
 
@@ -22,5 +26,9 @@ export default {
   forestButton,
   rainButton,
   crowdButton,
-  fireButton
+  fireButton,
+  forestSlider,
+  fireSlider,
+  rainSlider,
+  crowdSlider
 }

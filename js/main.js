@@ -8,7 +8,8 @@ import Timer from "./modules/timer.js";
 const sound = Sound()
 const { 
   playButton, stopButton, minusButton, plusButton, 
-  crowdButton, fireButton, forestButton, rainButton 
+  crowdButton, fireButton, forestButton, rainButton,
+  crowdSlider, fireSlider, forestSlider, rainSlider 
 } = elements
 
 display.update(0, 2)
@@ -42,6 +43,7 @@ function darkMode(bool) {
   }
 }
 
+/*  Theme mode ====================================================  */
 btnDark.addEventListener('click', () => {
   darkMode(false)
 })
@@ -51,7 +53,7 @@ btnLight.addEventListener('click', () => {
 })
 
 
-
+/* controls ============================================================  */
 playButton.addEventListener('click', () => {
   Sound().click()
   Timer.countdown()
@@ -77,16 +79,20 @@ plusButton.addEventListener('click', () => {
   controls.addMinutes()
 })
 
+
+/*  Card buttons  =================================================== */
 crowdButton.addEventListener('click', () => {
   Sound().toggle()
-
+  sound.sndCrowd.volume = 0.5
+  crowdSlider.value = 50
   sound.crowd()
   toggleCard(0)
 })
 
 rainButton.addEventListener('click', () => {
   Sound().toggle()
-
+  sound.sndRain.volume = 0.5
+  rainSlider.value = 50
   sound.rain()
   toggleCard(3)
 })
@@ -101,7 +107,31 @@ forestButton.addEventListener('click', () => {
 fireButton.addEventListener('click', () => {
   Sound().toggle()
 
+  
   sound.fire()
   toggleCard(1)
 
 })
+
+
+/* volume sliders  ================================================== */
+crowdSlider.addEventListener('input', function() {
+  let vol = this.value
+  sound.sndCrowd.volume = vol/100
+})
+
+fireSlider.addEventListener('input', function() {
+  let vol = this.value
+  sound.sndFire.volume = vol/100
+})
+
+forestSlider.addEventListener('input', function() {
+  let vol = this.value
+  sound.sndForest.volume = vol/100
+})
+
+rainSlider.addEventListener('input', function() {
+  let vol = this.value
+  sound.sndRain.volume = vol/100
+})
+
