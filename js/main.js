@@ -83,16 +83,16 @@ plusButton.addEventListener('click', () => {
 /*  Card buttons  =================================================== */
 crowdButton.addEventListener('click', () => {
   Sound().toggle()
-  sound.sndCrowd.volume = 0.5
-  crowdSlider.value = 50
+  // sound.sndCrowd.volume = 0.5
+  // crowdSlider.value = 50
   sound.crowd()
   toggleCard(0)
 })
 
 rainButton.addEventListener('click', () => {
   Sound().toggle()
-  sound.sndRain.volume = 0.5
-  rainSlider.value = 50
+  // sound.sndRain.volume = 0.5
+  // rainSlider.value = 50
   sound.rain()
   toggleCard(3)
 })

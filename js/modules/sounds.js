@@ -40,6 +40,7 @@ export default function () {
     }
     playingAudio.pause()
     playingAudio = sound
+    playingAudio.volume = 0.5
     playingAudio.play()
     isPlaying = true
   }
