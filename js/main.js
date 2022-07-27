@@ -12,8 +12,8 @@ const {
   crowdSlider, fireSlider, forestSlider, rainSlider 
 } = elements
 
-display.update(0, 2)
-Timer.update(0, 2)
+// display.update(5, 10)
+// Timer.update(5, 10)
 
 const appBody = document.querySelector('body')
 const btnDark = document.querySelector('#dark-on')
