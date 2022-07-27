@@ -7,6 +7,7 @@
   --accent-color: #02789c;
   --fg-display: #000;
   --slider-color: #323232;
+  --shadow: rgba(0, 0, 0, 0.562);
 
   --mode: 'light';
 
@@ -45,8 +46,8 @@ body.dark {
   --fg-card-active: #fff;
   --accent-color: #0A3442;
   --fg-display: #fff;
-  --slider-color: #fff
-
+  --slider-color: #fff;
+  --shadow: #00bfff94;
 
 
 
@@ -190,6 +191,10 @@ button:hover > svg path {
   transition: 300ms ease-out;
 
   position: relative;
+
+  -moz-box-shadow: 1px 1px 3px 1px var(--shadow);
+  -webkit-box-shadow: 1px 1px 3px 1px var(--shadow);
+  box-shadow: 1px 1px 3px 1px var(--shadow);
 
 }
 .card button {
@@ -336,8 +341,8 @@ button.active:hover  svg path {
   .theme-mode{
     top: 5vw;
     right: 10vw;
-    width: 2rem;
-    height: 2rem;
+    /* width: 2rem; */
+    /* height: 2rem; */
   }
 
   .timer {
